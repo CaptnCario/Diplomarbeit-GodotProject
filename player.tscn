@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvy1duf0ffo8b"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_d2vel"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdc5l"]
+radius = 0.251274
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_d2vel")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hdc5l")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.838374, 0)
