@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0roetwq6ffio"
+path="res://.godot/imported/Super Mario 64 Teleport Sound Effect - HD (mp3cut.net).mp3-0cfede59ad3a1aaac995c09f18895872.mp3str"
+
+[deps]
+
+source_file="res://Audio/Super Mario 64 Teleport Sound Effect - HD (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Super Mario 64 Teleport Sound Effect - HD (mp3cut.net).mp3-0cfede59ad3a1aaac995c09f18895872.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

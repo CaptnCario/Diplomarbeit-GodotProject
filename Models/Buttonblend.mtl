@@ -1,0 +1,44 @@
+# Blender 4.4.3 MTL File: 'Buttonblend.blend'
+# www.blender.org
+
+newmtl Knopf
+Ka 0.149091 0.149091 0.149091
+Kd 0.800126 0.000000 0.008650
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Ns -s 1 -1.4999998 1 C:/Users/domis/AppData/Local/Temp/Rar$DRa0.822/Leather036D_4K-JPG_Roughness.jpg
+map_Bump -s 1 -1.4999998 1 -bm 0.810000 C:/Users/domis/AppData/Local/Temp/Rar$DRa0.662/Leather036D_4K-JPG_NormalDX.jpg
+
+newmtl Knopf_Podest
+Ns 0.000000
+Ka 0.927273 0.927273 0.927273
+Kd 0.000000 0.800630 0.283387
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 1.010000 1.002738
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Knopf_unten
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Säule
+Ka 0.792727 0.792727 0.792727
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Ns -s -15.799999 -15.799999 -15.799999 C:/Users/domis/AppData/Local/Temp/Rar$DRa0.742/Metal044B_4K-JPG_Roughness.jpg
+map_Bump -s -15.799999 -15.799999 -15.799999 -bm 0.870000 C:/Users/domis/AppData/Local/Temp/Rar$DRa0.387/Metal044B_4K-JPG_NormalDX.jpg

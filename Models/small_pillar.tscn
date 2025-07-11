@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dup8medaye401"]
+
+[ext_resource type="PackedScene" uid="uid://ccpgtms1pmmai" path="res://Models/SmallPillar.fbx" id="1_yvmlg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygahf"]
+albedo_color = Color(0.61339, 0.61339, 0.61339, 1)
+roughness = 0.05
+emission_enabled = true
+emission = Color(0.197937, 0.197937, 0.197937, 1)
+emission_energy_multiplier = 2.37
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp2jn"]
+transparency = 1
+albedo_color = Color(0, 0.702333, 0.86, 0.560784)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6fddn"]
+material = SubResource("StandardMaterial3D_pp2jn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6wxd"]
+size = Vector3(2, 13, 2)
+
+[node name="SmallPillar" instance=ExtResource("1_yvmlg")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ygahf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1.95, 0, 0, 0, 10.5, 0, 0, 0, 1.95, 0, 6.2, 0)
+mesh = SubResource("BoxMesh_6fddn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_d6wxd")

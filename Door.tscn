@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt55hfowk3i7u"]
+
+[ext_resource type="Script" path="res://Scripts/Door.cs" id="1_gkglu"]
+[ext_resource type="PackedScene" uid="uid://l5mh1rcjp1b0" path="res://door_arch_01.tscn" id="2_rpagk"]
+[ext_resource type="PackedScene" uid="uid://bex5dti7kpflb" path="res://Imported_Files/_Barking_Dog/3D Free Modular Kit/_Meshes/Door_Left_01.FBX" id="2_vr431"]
+[ext_resource type="AudioStream" uid="uid://eqqgwcrxbs68" path="res://Audio/DoorOpen.mp3" id="4_ydvei"]
+[ext_resource type="AudioStream" uid="uid://dir35py868l3q" path="res://Audio/DoorClose.mp3" id="5_i1o4d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wrtf"]
+size = Vector3(2.77489, 3.96887, 0.746948)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2of1r"]
+size = Vector3(2.93237, 3.96985, 0.750992)
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00643611, 0.0553114, 0.00279891)
+script = ExtResource("1_gkglu")
+speed = 5.0
+
+[node name="Door_Left" parent="." instance=ExtResource("2_vr431")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, -0.019)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_Left"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Left/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59477, 1.48444, 0.514099)
+shape = SubResource("BoxShape3D_0wrtf")
+
+[node name="Door_Right" parent="." instance=ExtResource("2_vr431")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0.0401704, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_Right"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Right/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54846, 1.48492, 0.504495)
+shape = SubResource("BoxShape3D_2of1r")
+
+[node name="Door_Arch_01" parent="." instance=ExtResource("2_rpagk")]
+
+[node name="Door_Arch_02" parent="." instance=ExtResource("2_rpagk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, 1.005)
+
+[node name="DoorOpenPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11151, 0, 0)
+stream = ExtResource("4_ydvei")
+
+[node name="DoorClosePlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14977, 0, 0)
+stream = ExtResource("5_i1o4d")

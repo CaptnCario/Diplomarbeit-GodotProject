@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://tb3wt4hukd6x"]
+
+[ext_resource type="Texture2D" uid="uid://cy0pljb5ipdmq" path="res://Material/Images/DiamondPlate007A_4K-JPG_Color.jpg" id="1_l07as"]
+[ext_resource type="PackedScene" uid="uid://c6311jlftvt0q" path="res://Imported_Files/_Barking_Dog/3D Free Modular Kit/_Meshes/wall_simple_02.tscn" id="2_50csa"]
+[ext_resource type="Texture2D" uid="uid://cr0avavdx8xqs" path="res://Material/Images/DiamondPlate007A_4K-JPG_NormalDX.jpg" id="2_pd1r7"]
+[ext_resource type="Texture2D" uid="uid://5j66qincwpab" path="res://Material/Images/DiamondPlate007A_4K-JPG_Roughness.jpg" id="3_taf1f"]
+[ext_resource type="PackedScene" uid="uid://c5f2g7g1pjsvw" path="res://Imported_Files/_Barking_Dog/3D Free Modular Kit/_Meshes/roof_01.tscn" id="5_k50ln"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwooo"]
+albedo_texture = ExtResource("1_l07as")
+albedo_texture_force_srgb = true
+metallic = 0.59
+metallic_specular = 0.75
+roughness = 0.0
+roughness_texture = ExtResource("3_taf1f")
+emission_enabled = true
+emission = Color(0.374139, 0.374139, 0.374139, 1)
+emission_energy_multiplier = 1.27
+normal_enabled = true
+normal_scale = 10.02
+normal_texture = ExtResource("2_pd1r7")
+uv1_scale = Vector3(1.6, 1.6, 1.6)
+
+[node name="Hallway" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99651, -0.0720974, -0.379238)
+use_collision = true
+size = Vector3(10, 0.082, 6.47)
+material = SubResource("StandardMaterial3D_jwooo")
+
+[node name="Wall_Simple_01" parent="." instance=ExtResource("2_50csa")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.5, 0, -3.2)
+
+[node name="Wall_Simple_02" parent="." instance=ExtResource("2_50csa")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, -3.2)
+
+[node name="Wall_Simple_03" parent="." instance=ExtResource("2_50csa")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, -3.2)
+
+[node name="Wall_Simple_04" parent="." instance=ExtResource("2_50csa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0, 2.496)
+
+[node name="Wall_Simple_05" parent="." instance=ExtResource("2_50csa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.5, 0, 2.496)
+
+[node name="Wall_Simple_06" parent="." instance=ExtResource("2_50csa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.5, 0, 2.496)
+
+[node name="Roof_07" parent="." instance=ExtResource("5_k50ln")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.32, 0, 1, 0, -4.37114e-08, 8.5, 2.033, -3.202)
+
+[node name="Roof_08" parent="." instance=ExtResource("5_k50ln")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.32, 0, 1, 0, -4.37114e-08, 5.5, 2.033, -3.202)
+
+[node name="Roof_09" parent="." instance=ExtResource("5_k50ln")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.32, 0, 1, 0, -4.37114e-08, 2.5, 2.033, -3.202)
+
+[node name="Roof_10" parent="." instance=ExtResource("5_k50ln")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.32, 0, -1, 0, -4.37114e-08, -0.5, 2.033, 2.496)
+
+[node name="Roof_11" parent="." instance=ExtResource("5_k50ln")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.32, 0, -1, 0, -4.37114e-08, 2.5, 2.033, 2.496)
+
+[node name="Roof_12" parent="." instance=ExtResource("5_k50ln")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.32, 0, -1, 0, -4.37114e-08, 5.5, 2.033, 2.496)

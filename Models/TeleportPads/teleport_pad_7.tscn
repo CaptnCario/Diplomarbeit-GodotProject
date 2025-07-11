@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcyxugj8qn5cg"]
+
+[ext_resource type="PackedScene" uid="uid://csnvndyv6hyp6" path="res://Models/Teleport Pad.fbx" id="1_dcco2"]
+[ext_resource type="Texture2D" uid="uid://cy0pljb5ipdmq" path="res://Material/Images/DiamondPlate007A_4K-JPG_Color.jpg" id="2_r27t4"]
+[ext_resource type="Texture2D" uid="uid://cr0avavdx8xqs" path="res://Material/Images/DiamondPlate007A_4K-JPG_NormalDX.jpg" id="3_uyt3u"]
+[ext_resource type="Texture2D" uid="uid://5j66qincwpab" path="res://Material/Images/DiamondPlate007A_4K-JPG_Roughness.jpg" id="4_q6416"]
+[ext_resource type="Script" path="res://Scripts/TeleportPad.cs" id="5_b4w64"]
+[ext_resource type="AudioStream" uid="uid://c0roetwq6ffio" path="res://Audio/Super Mario 64 Teleport Sound Effect - HD (mp3cut.net).mp3" id="6_h3iaj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e836q"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_r27t4")
+metallic = 0.07
+roughness_texture = ExtResource("4_q6416")
+emission = Color(0.20871, 0.20871, 0.20871, 1)
+normal_enabled = true
+normal_scale = 0.35
+normal_texture = ExtResource("3_uyt3u")
+uv1_scale = Vector3(10.61, 10.61, 10.61)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta64n"]
+albedo_color = Color(0.92, 0, 0.0153331, 1)
+emission = Color(0, 0.982139, 0.808241, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77nc5"]
+albedo_color = Color(0.523035, 0.486133, 0.411436, 1)
+metallic = 0.5
+metallic_specular = 0.62
+roughness = 0.51
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.45
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vjdfc"]
+height = 4.0
+radius = 0.8
+
+[node name="Teleport Pad" instance=ExtResource("1_dcco2")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(100, 1.42109e-12, 2.54721e-07, 8.74228e-06, -1.78814e-05, -2.91367, 2.08939e-19, -100, 3.47336e-07, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_e836q")
+
+[node name="Cylinder" parent="." index="1"]
+transform = Transform3D(94.7845, 0, 0, 0, -1.12992e-05, 2.07284, 0, -94.7845, -2.47102e-07, 0, 0.0681457, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ta64n")
+surface_material_override/1 = SubResource("StandardMaterial3D_77nc5")
+
+[node name="Area3D" type="Area3D" parent="." index="2" node_paths=PackedStringArray("teleportSound")]
+script = ExtResource("5_b4w64")
+teleportSound = NodePath("../AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+shape = SubResource("CylinderShape3D_vjdfc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("6_h3iaj")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgdcblriped2i"]
+
+[ext_resource type="PackedScene" uid="uid://bmo4dxdk3n3hs" path="res://Imported_Files/_Barking_Dog/3D Free Modular Kit/_Meshes/Wall_Simple_01.FBX" id="1_wlnmd"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l5a63"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n862o"]
+size = Vector3(0.513672, 6.50958, 3.54688)
+
+[node name="Wall" type="Node3D"]
+
+[node name="Wall_Simple_01" parent="." instance=ExtResource("1_wlnmd")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Simple_01"]
+mesh = SubResource("ArrayMesh_l5a63")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Simple_01/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Simple_01/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243164, 2.75479, -1.27344)
+shape = SubResource("BoxShape3D_n862o")
+
+[node name="Wall_Simple_02" parent="." instance=ExtResource("1_wlnmd")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, -3)

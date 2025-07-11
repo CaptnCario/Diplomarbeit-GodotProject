@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6311jlftvt0q"]
+
+[ext_resource type="PackedScene" uid="uid://bmo4dxdk3n3hs" path="res://Imported_Files/_Barking_Dog/3D Free Modular Kit/_Meshes/Wall_Simple_01.FBX" id="1_2korg"]
+[ext_resource type="Texture2D" uid="uid://80aes30c4fsh" path="res://Imported_Files/_Barking_Dog/3D Free Modular Kit/_Textures/Diffuse_01_Negativ.png" id="2_3s31v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0idmo"]
+albedo_texture = ExtResource("2_3s31v")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mj5ny"]
+size = Vector3(0.29007, 2.97388, 3.51086)
+
+[node name="Wall_Simple_01" instance=ExtResource("1_2korg")]
+
+[node name="Wall_Simple_01" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0idmo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Simple_01" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Simple_01/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115677, -1.49622, 1.25543)
+shape = SubResource("BoxShape3D_mj5ny")

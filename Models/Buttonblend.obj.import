@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mrmv6h1lly7j"
+path="res://.godot/imported/Buttonblend.obj-9827799ca3bc4642629e816df13d59dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Buttonblend.obj-9827799ca3bc4642629e816df13d59dc.mesh"]
+
+source_file="res://Models/Buttonblend.obj"
+dest_files=["res://.godot/imported/Buttonblend.obj-9827799ca3bc4642629e816df13d59dc.mesh", "res://.godot/imported/Buttonblend.obj-9827799ca3bc4642629e816df13d59dc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
