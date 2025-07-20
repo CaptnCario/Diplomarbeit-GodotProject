@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ba1mpes5twhkd" path="res://Material/Images/Tiles002_4K-JPG_Color.jpg" id="1_57vt4"]
 [ext_resource type="PackedScene" uid="uid://bvy1duf0ffo8b" path="res://player.tscn" id="1_xkmwl"]
 [ext_resource type="Texture2D" uid="uid://ddf3k7ahtpbox" path="res://Material/Images/Tiles002_4K-JPG_NormalDX.jpg" id="2_mfjxu"]
-[ext_resource type="PackedScene" uid="uid://cj2lkto7f0rwn" path="res://Button.tscn" id="2_qky50"]
+[ext_resource type="PackedScene" uid="uid://cj2lkto7f0rwn" path="res://Material/Images/Button.tscn" id="2_qky50"]
 [ext_resource type="Texture2D" uid="uid://cgni1rg4gr8n2" path="res://Material/Images/Tiles002_4K-JPG_Roughness.jpg" id="3_my57w"]
 [ext_resource type="PackedScene" uid="uid://08h0wltyvl2y" path="res://Models/Pillar.fbx" id="6_76mno"]
 [ext_resource type="PackedScene" uid="uid://bgdcblriped2i" path="res://Wall.tscn" id="7_4xiyn"]
