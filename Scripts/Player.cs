@@ -46,7 +46,7 @@ public partial class Player : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
-
+		// Passt die Werte an, je nach Größe des Spielers
 		if (Scale == new Vector3(0.2f, 0.2f, 0.2f))
 		{
 			JumpVelocity = 3.0f;
@@ -59,7 +59,8 @@ public partial class Player : CharacterBody3D
 		}
 		PerformMovement(delta);
 
-		if(Input.IsActionJustPressed("interact"))
+		//Button Interaktion
+		if (Input.IsActionJustPressed("interact"))
 		{
 			Object collider = _rayCast.GetCollider();
 			if (collider != null)
@@ -75,18 +76,19 @@ public partial class Player : CharacterBody3D
 	private void PerformMovement(double delta) {
 		Vector3 velocity = Velocity;
 
-		// Add the gravity.
+		// Fügt die Gravitation hinzu
 		if (!IsOnFloor())
 		{
 			velocity += GetGravity() * (float)delta;
 		}
 
-		// Handle Jump.
+		// Für Sprung
 		if (Input.IsActionJustPressed("space") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
 		}
 
+		//Berechnung der Bewegungen
 		Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 		Vector3 direction = (_head.GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		if (direction != Vector3.Zero)

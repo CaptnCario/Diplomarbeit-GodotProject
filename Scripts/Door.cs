@@ -17,6 +17,7 @@ public partial class Door : Node3D
 	public float speed = 1.0f;
 
 	// Called when the node enters the scene tree for the first time.
+	//Unity Start equivalent
 	public override void _Ready()
 	{
 		audioPlayerOpen = GetNode<AudioStreamPlayer3D>("DoorOpenPlayer");
@@ -26,6 +27,7 @@ public partial class Door : Node3D
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	// Unity Update equivalent
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 targetLeft;

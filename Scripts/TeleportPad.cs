@@ -136,12 +136,7 @@ public partial class TeleportPad : Area3D
 					GD.Print("Unknown teleport pad: " + sceneName);
 					break;
 			}
-
 			teleportSound.Play();
-
 		}
-
-
-
 	}
 }
